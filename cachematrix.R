@@ -2,17 +2,17 @@
 ## in this case we are caching the inverse of a matrix
 
 ## creates a special matrix which can be used by cachesolve
-
+## x will contain the matrix to invert
 makeCacheMatrix <- function(x = matrix) {
-    mtx_inverse <- NULL
-    set <- function(y) {
+    mtx_inverse <- NULL         # var to hold matrix inverse
+    set <- function(y) {        # method to x
         x <<- y
         mtx_inverse <<- NULL
     }
-    get <- function() x
-    setInverse <- function(inverse) mtx_inverse <<- inverse
-    getInverse <- function() mtx_inverse
-    list(set = set, get = get,
+    get <- function() x         # method to get x
+    setInverse <- function(inverse) mtx_inverse <<- inverse # method to get the inverse of x
+    getInverse <- function() mtx_inverse                    # method to set the inverse of x
+    list(set = set, get = get,                              # gives visibility to methods
          setInverse = setInverse,
          getInverse = getInverse)
 }
