@@ -5,7 +5,7 @@
 ## x will contain the matrix to invert
 makeCacheMatrix <- function(x = matrix) {
     mtx_inverse <- NULL         # var to hold matrix inverse
-    set <- function(y) {        # method to x
+    set <- function(y) {a$get()        # method to x
         x <<- y
         mtx_inverse <<- NULL
     }
@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix) {
 ## to return a cached result if it has already computed the inverse
 
 cacheSolve <- function(x, ...) {
-    m <- x$getInverse()         # query the x matrix's cache
+    m <- x$getInverse()         # query the x matrix's cache to get the inverse
     if(!is.null(m)) {           # if there is a cache
         message("getting cached data")
         return(m)           # just return the cache, no computation needed
