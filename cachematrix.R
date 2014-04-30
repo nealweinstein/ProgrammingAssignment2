@@ -5,7 +5,7 @@
 ## x will contain the matrix to invert
 makeCacheMatrix <- function(x = matrix) {
     mtx_inverse <- NULL         # var to hold matrix inverse
-    set <- function(y) {a$get()        # method to x
+    set <- function(y) {        # method to x
         x <<- y
         mtx_inverse <<- NULL
     }
